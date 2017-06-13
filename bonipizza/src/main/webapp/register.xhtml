@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<head><title>Registrieren</title></head>
+
+<body>
+<h2><h:outputText value="Registrieren" /></h2>
+<h:messages style="color: red" />
+<div>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputText value="Username" />
+            <h:inputText  label="Username" value="#{LoginBean.inputName}" />
+            <h:outputText value="Password" />
+            <h:inputSecret  label="Password" value="#{LoginBean.inputPassword}" />
+        </h:panelGrid>
+        <h:commandButton value="Submit" action="#{LoginBean.register()}" />
+        <h:commandButton value="Abort" action="login.xhtml" immediate="true" />
+    </h:form>
+</div>
+</body>
+</html>

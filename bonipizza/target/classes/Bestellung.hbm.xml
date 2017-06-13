@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.alpha.bonipizza.entities.Bestellung" table="orders">
+        <meta attribute="class-description">
+            diese Klasse beinhaltet die Attribute für Bestellungen
+        </meta>
+        <id name="bestellungID" column="bestellungID" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="bestellungID" column="bestellungID" type="int" insert="false" update="false"/>
+        <property name="besitzer" column="besitzer"  type="string"/>
+        <property name="bestellNr" column="bestellNr" type="int"/>
+        <property name="kommentar" column="kommentar" type="string"/>
+        <property name="preis" column="preis" type="float"/>
+        <property name="bestellDatum" column="bestellDatum" type="date"/>
+    </class>
+</hibernate-mapping>

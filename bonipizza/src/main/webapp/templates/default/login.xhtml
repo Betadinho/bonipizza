@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<head>
+    <title>Anmelden</title>
+</head>
+<body>
+<ui:composition template="/templates/default/main.xhtml">
+    <link rel="stylesheet" href="/resources/css/login.css" />
+    <div class="wrapper">
+            <h:messages style="color: red" />
+            <h:form class="form-signin">
+                <h2 class="form-signin-heading">Bitte anmelden</h2>
+                <h:panelGrid columns="2">
+                    <h:inputText label="Username" clasS="form-control" value="#{LoginBean.inputName}" />
+                    <h:inputSecret type="password" class="form-control" name="password" placeholder="Password" label="Password" value="#{LoginBean.inputPassword}" />
+                </h:panelGrid>
+                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Bestätigen" action="#{LoginBean.Login()}" />
+                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Registrieren" action="register.xhtml" />
+                <h:commandButton class="btn btn-lg btn-primary btn-block" value="Abbrechen" action="index.xhtml" immediate="true" />
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me </input>
+                </label>
+            </h:form>
+    </div>
+</ui:composition>
+</body>
+</html>

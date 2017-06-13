@@ -1,0 +1,8 @@
+de/alpha/bonipizza/entities/LoginDAO.class
+de/alpha/bonipizza/backingbeans/BestellungBean.class
+de/alpha/bonipizza/entities/User.class
+de/alpha/bonipizza/util/SessionUtils.class
+de/alpha/bonipizza/backingbeans/LoginBean.class
+de/alpha/bonipizza/entities/BestellungDAO.class
+de/alpha/bonipizza/util/AuthorizationFilter.class
+de/alpha/bonipizza/entities/Bestellung.class

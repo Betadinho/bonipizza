@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<head><title>Place a new Order</title></head>
+
+<body>
+<h2><h:outputText value="Einzelnes Element hinzufuegen" /></h2>
+<h:messages style="color: red" />
+<h:form>
+        <h:outputText value="ID" />
+        <h:inputText  label="ID"          value="#{BestellungBean.einzelElement.bestellungID}" disabled="true" />
+        <h:outputText value="besitzer" />
+        <h:inputText  label="besitzer" value="#{BestellungBean.einzelElement.besitzer}" />
+        <h:outputText value="bestellNr" />
+        <h:inputText  label="bestellNr" value="#{BestellungBean.einzelElement.bestellNr}" />
+        <h:outputText value="Kommentar" />
+        <h:inputText  label="Kommentar" value="#{BestellungBean.einzelElement.kommentar}" />
+        <h:outputText value="Preis" />
+        <h:inputText  label="Preis" value="#{BestellungBean.einzelElement.preis}" />
+
+    <h:commandButton value="Save" action="#{BestellungBean.bestellungSpeichern}" />
+</h:form>
+</body>
+</html>

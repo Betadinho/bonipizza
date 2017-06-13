@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/templates/default/main.xhtml">
+        <ui:define name="content">
+            <div class="wrapper">
+                <h:messages style="color: red" />
+                <h:form>
+                    <div class=" form-group col-xs-3 col-md-3">
+                        <h:outputText value="Besitzer" />
+                        <h:inputText  label="besitzer" class="form-control" value="#{BestellungBean.einzelElement.besitzer}" />
+                    </div>
+                    <div class=" form-group col-xs-3 col-md-3">
+                        <h:outputText value="BestellNr" />
+                        <h:inputText  label="bestellNr" class="form-control" value="#{BestellungBean.einzelElement.bestellNr}" />
+                    </div>
+                    <div class=" form-group col-xs-3 col-md-3">
+                        <h:outputText value="Kommentar" />
+                        <h:inputText  label="Kommentar" class="form-control" value="#{BestellungBean.einzelElement.kommentar}" />
+                    </div>
+                    <div class=" form-group col-xs-3 col-md-3">
+                        <h:outputText value="Preis" />
+                        <h:inputText  label="Preis" class="form-control" value="#{BestellungBean.einzelElement.preis}" />
+                    </div>
+                    <br></br>
+                    <div class="form-grouü">
+                        <h:commandButton class="btn btn-md btn-primary btn-block" value="Save" action="#{BestellungBean.bestellungSpeichern}" />
+                    </div>
+                </h:form>
+            </div>
+            <br></br>
+            <br></br>
+            <div class="table-responsive">
+                <h:messages style="color: red" />
+                <h:form>
+                    <h:dataTable value="#{BestellungBean.datenListe}" var="loopElement" class="table striped">
+                        <h:column>
+                            <f:facet name="header" ><h:outputText value="Besitzer"></h:outputText></f:facet>
+                            <h:outputText value="#{loopElement.besitzer}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header" ><h:outputText value="BestellNr."></h:outputText></f:facet>
+                            <h:outputText value="#{loopElement.bestellNr}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header" ><h:outputText value="Kommentar"></h:outputText></f:facet>
+                            <h:outputText value="#{loopElement.kommentar}" />
+                        </h:column>
+                        <h:outputText value="Bestell Datum"></h:outputText>
+                        <h:outputText value="#{loopElement.bestellDatum}" />
+                        <h:column>
+                            <f:facet name="header" ><h:outputText value="Preis"></h:outputText></f:facet>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header" ></f:facet>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Edit"
+                                             title="Edit Order"
+                                             action="#{BestellungBean.bestellungBearbeiten(loopElement)}"
+                                             ajax="true"
+                            />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Delete"
+                                             title="Delete Order"
+                                             actionListener="#{BestellungBean.bestellungEntfernen(loopElement)}"
+                                             ajax="true" />
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
